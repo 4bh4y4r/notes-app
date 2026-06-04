@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+        <title> 
+            {%block title%}
+            {% endblock%}
+
+        </title>
+        <link rel=stylesheet   href=" {{ url_for('static', filename='style.css') }}" >
+
+    </head>
+
+
+
+
+    <body>
+
+                
+        <div class = "main-body">
+
+            <div class= "container"> 
+
+                <div> <h2> {%block purpose%}
+                            {% endblock%}
+
+                </h2></div>
+                <div> 
+
+                    <form class="info" method="POST">
+
+                        <input class = "user" type = "text" placeholder="username" name = "username" required>
+                        <input class =  "user" type="password" placeholder="password" name = "password" required>
+                        <button class = "submit-button" type="submit" value="Login"> {%block  purpose2%}
+                            {%endblock%} </button>
+
+                    </form>
+
+                </div>
+                <div> 
+                    {% block question%}
+                    {% endblock%}
+                    
+                </div>
+                <div class="flashmessage"> 
+                    {%block flashed%}
+
+                    {% endblock %}
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </body>
+
+
+
+
+
+</html>

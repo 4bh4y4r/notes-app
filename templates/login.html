@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+
+
+{% block title%}
+ Login Page
+{%endblock%}
+
+
+{% block purpose%}
+ Login 
+{%endblock%}
+
+
+{% block purpose2%}
+ Login 
+{%endblock%}
+
+
+{% block question%}
+<a href="{{url_for('register_page')}}"> Don't have an account? Register</a>
+{%endblock%}
+
+
+{%block flashed%}
+
+    {% with messages = get_flashed_messages()%}
+
+        {% for msg in messages%}
+
+            <p> {{msg}}</p>
+
+        {% endfor %}
+
+    {% endwith%}
+
+
+{% endblock%}
+
+
+

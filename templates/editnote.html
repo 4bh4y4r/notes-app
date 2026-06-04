@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+    
+        <title> NOTE CREATION </title>
+        <link rel=stylesheet   href=" {{ url_for('static', filename='style.css') }}" >
+
+
+    </head>
+
+
+
+
+
+
+
+
+    <body>
+
+        <div class="mainbody"> 
+            <div class = "links"> 
+
+                <a href="{{url_for('home_page')}}">Back to Home</a>
+
+            </div>
+
+
+            <div class="notes-container"> 
+
+                <form method="POST" class = "notes">
+
+
+                    <input type="text" placeholder="TITLE" name = "title" value = "{{note.title}}"> 
+                    <input type="text" placeholder = "DESCRIPTION" name = "desc" value = "{{note.description}}">
+                    <button type="submit" value="create"> UPDATE </button>
+
+
+                </form>
+
+                <div class= "flash"> 
+
+                    {%block flashed_msg%}
+                        {% with messages = get_flashed_messages()%}
+
+                            {% for msg in messages%}
+
+                                <p> {{msg}}</p>
+
+                            {% endfor %}
+
+                        {% endwith%}
+
+
+                    {% endblock %}
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </body>
+
+
+
+
+</html>
